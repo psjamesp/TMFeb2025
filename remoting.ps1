@@ -23,6 +23,8 @@ Invoke-Command -ComputerName dc01,srv01,srv02 -ScriptBlock{
     get-service bits | restart-service
 } -Credential $cred
 
+foo
+
 get-adcomputer -filter * -searchbase "ou=servers","dc=714tech","dc=local"
 
 $servers = get-adcomputer -filter * -searchbase "ou=servers,dc=714tech,dc=local" | select -ExpandProperty name
